@@ -13,6 +13,10 @@
 
     <h1>Hello</h1>
 
+    <form action="https://api.instagram.com/oauth/authorize/?client_id=63d392ef995d4ecebcfa2bff77725ede&redirect_uri=https://whitec54.github.io/MostLiked&response_type=token&scope=public_content">
+      <input type="submit" value="Go to Google">
+    </form>
+
     <script>
     var instaClientID = '63d392ef995d4ecebcfa2bff77725ede';
     var instaClientSecret = '3d68c426fa7f487cb73ac78c66d9a7b4';
@@ -20,11 +24,15 @@
 
     var instaAuthUrl = 'https://api.instagram.com/oauth/authorize/?client_id='+ instaClientID +'&redirect_uri='+ instaRedirect +'&response_type=token';
 
-    var access_token = '207676824.63d392e.75f09a45c1614e70aaf035dc6531ad9e';
+    
 
     var testAddress = 'https://maps.googleapis.com/maps/api/geocode/json?address=gaylord&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';
 
-    
+    if(window.location.hash){
+      var access_token =  window.location.hash.substr(1);
+      alert(access_token);
+    }
+  
 
     $.get(testAddress, function(data){
 
