@@ -44,9 +44,15 @@
 
           var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+access_token;
 
-          $.get(instaAddress, function(instaData){
-            console.log(instaData)
+          $.ajax({
+            type: "GET",
+            dataType: "jsonp",
+            url: instaAddress, 
+            success: function(data) {
+                console.log(data);
+            }
           });
+
         });
     }
 
