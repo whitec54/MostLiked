@@ -27,9 +27,9 @@
     
 
     $.get(testAddress, function(data){
-        var lat,lng;
-        lat = data["results"][0]["geometry"]["location"]["lat"];
-        lng = data["results"][0]["geometry"]["location"]["lng"];
+
+        var lat = data["results"][0]["geometry"]["location"]["lat"];
+        var lng = data["results"][0]["geometry"]["location"]["lng"];
 
         console.log(lat.toString()+", "+lng.toString());
       });
