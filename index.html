@@ -11,7 +11,7 @@
 
   <body>
 
-    <h1>Hello5</h1>
+    <h1>Hello6</h1>
 
     <button onclick="redirect()">get insta key</button>
 
@@ -43,6 +43,8 @@
           console.log(access_token);
 
           var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+access_token;
+
+          console.log(instaAddress)
 
           $.ajax({
             type: "GET",
