@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <title>Hello World - Google  Web Search API Sample</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+  </head>
+
+
+  <body>
+
+    <h1>Hello World</h1>
+
+    <script>
+
+    var testAddress = 'https://maps.googleapis.com/maps/api/geocode/json?address=gaylord&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA'
+
+    $.get(testAddress, function(data){
+        var lat = data["results"][0]["geometry"]["location"]["lat"];
+        var lng = data["results"][0]["geometry"]["location"]["lng"];
+
+        console.log(lat.toString()+", "+lng.toString());
+      });
+
+    </script>
+    
+  </body>
+</html>
