@@ -11,7 +11,7 @@
 
   <body>
 
-    <h1>Hello</h1>
+    <h1>Hello2</h1>
 
     <button onclick="redirect()">get insta key</button>
 
@@ -41,6 +41,12 @@
           console.log(lat.toString()+", "+lng.toString());
 
           console.log(access_token);
+
+          var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat+'&lng='lng'&'+access_token;
+
+          $.get(instaAddress, function(instaData){
+            console.log(instaData)
+          });
         });
     }
 
