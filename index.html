@@ -13,9 +13,13 @@
   <body>
 
   <div id="app">
-    <h1> {{ instaClientID }} </h1>
-    <h1> {{ instaClientSecret }} </h1>
-    <h1> {{ instaRedirect }} </h1>
+    <h1>instaClientId: {{ instaClientID }} </h1>
+    <h1>instaClientSecret {{ instaClientSecret }} </h1>
+    <h1>instaRedirect: {{ instaRedirect }} </h1>
+    <h1>address: {{ address }} </h1>
+    <h1>instaAuthUrl: {{ instaAuthUrl }} </h1>
+    <h1>testAddress: {{ testAddress }} </h1>
+    <h1 v-show="haveAccess">access_token: {{ access_token }} </h1>
 
     <button v-show="!haveAccess" @click="redirect">verify with insta</button>
     
