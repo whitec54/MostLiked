@@ -16,6 +16,8 @@
     <button onclick="redirect()">get insta key</button>
 
     <script>
+    var GobalInstaData;
+
     var instaClientID = '63d392ef995d4ecebcfa2bff77725ede';
     var instaClientSecret = '3d68c426fa7f487cb73ac78c66d9a7b4';
     var instaRedirect = 'https://whitec54.github.io/MostLiked';
@@ -30,6 +32,7 @@
     if(window.location.hash){
       access_token =  window.location.hash.substr(1);
       googleLocal();
+      console.log(GobalInstaData)
     }
     
     function googleLocal(){
@@ -52,11 +55,12 @@
             dataType: "jsonp",
             url: instaAddress, 
             success: function(data) {
-                console.log(data);
+                GobalInstaData = data;
             }
           });
 
         });
+
     }
 
     function redirect(){
