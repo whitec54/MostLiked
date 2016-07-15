@@ -37,7 +37,7 @@
       },
 
       computed: {
-        instaAuthUrl: function() { return 'https://api.instagram.com/oauth/authorize/?client_id='+instaClientID +'&redirect_uri='+ instaRedirect +'&response_type=token&scope=public_content'},
+        instaAuthUrl: function() { return 'https://api.instagram.com/oauth/authorize/?client_id='+this.instaClientID +'&redirect_uri='+ this.instaRedirect +'&response_type=token&scope=public_content'},
 
         testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
 
