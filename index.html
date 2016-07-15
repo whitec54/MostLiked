@@ -53,8 +53,8 @@
         setAccessfunction: function(){ this.access_token =  window.location.hash.substr(1);},
 
         googleLocal: function(){
-          $.get(this.testAddress, function(data){
-            console.log(data);
+          $.get(this.testAddress, function(imageData){
+            console.log(imageData);
             /*
             var lat = data["results"][0]["geometry"]["location"]["lat"];
             var lng = data["results"][0]["geometry"]["location"]["lng"];
