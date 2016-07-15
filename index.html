@@ -13,26 +13,32 @@
 
     <h1>Hello6</h1>
 
+    <form>
+      <input type="text" id="formValueId" name="valueId"/>
+      <input type="button" id="theButton"/>
+    </form>
+
     <button onclick="redirect()">get insta key</button>
 
     <script>
-    $.GobalInstaData ={};
 
     var instaClientID = '63d392ef995d4ecebcfa2bff77725ede';
     var instaClientSecret = '3d68c426fa7f487cb73ac78c66d9a7b4';
     var instaRedirect = 'https://whitec54.github.io/MostLiked';
     var access_token;
 
-    var instaAuthUrl = 'https://api.instagram.com/oauth/authorize/?client_id='+ instaClientID +'&redirect_uri='+ instaRedirect +'&response_type=token&scope=public_content';
+    var button = document.getElementById("theButton"),
+    value = button.form.valueId.value;
+    button.onclick = function() {
+        foo(value);
+    }
 
-    
+    var instaAuthUrl = 'https://api.instagram.com/oauth/authorize/?client_id='+ instaClientID +'&redirect_uri='+ instaRedirect +'&response_type=token&scope=public_content';
 
     var testAddress = 'https://maps.googleapis.com/maps/api/geocode/json?address=6802+UTSA+Boulevard&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';
 
     if(window.location.hash){
       access_token =  window.location.hash.substr(1);
-      googleLocal();
-      console.log($.GobalInstaData)
     }
     
     function googleLocal(){
@@ -55,18 +61,21 @@
             dataType: "jsonp",
             url: instaAddress, 
             success: function(data) {
-                $.GobalInstaData = data;
+                console.log(data)
             }
           });
 
         });
 
-    }
+    };
 
     function redirect(){
       window.location.replace(instaAuthUrl);
-    }
+    };
   
+    function foo(value){
+      alert(value);
+    };
 
     </script>
     
