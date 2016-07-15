@@ -17,8 +17,9 @@
     <h1>instaClientSecret {{ instaClientSecret }} </h1>
     <h1>instaRedirect: {{ instaRedirect }} </h1>
     <h1>address: {{ address }} </h1>
-    <h1 v-show="haveAccess">access_token: {{ access_token }} </h1>
     <h1> {{ testAddress }} </h1>
+    <h1 v-show="haveAccess">access_token: {{ access_token }} </h1>
+
 
     <button v-show="!haveAccess" @click="redirect">verify with insta</button>
     <button v-show="haveAccess" @click="setAccessfunction"> grab key</button>
@@ -42,7 +43,7 @@
       computed: {
         instaAuthUrl: function() { return 'https://api.instagram.com/oauth/authorize/?client_id='+this.instaClientID +'&redirect_uri='+ this.instaRedirect +'&response_type=token&scope=public_content'},
 
-        testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
+        testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+this.address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
 
         haveAccess: function(){ return window.location.hash}
       },
