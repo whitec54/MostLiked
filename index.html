@@ -25,7 +25,7 @@
 
     
 
-    var testAddress = 'https://maps.googleapis.com/maps/api/geocode/json?address=chicago&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';
+    var testAddress = 'https://maps.googleapis.com/maps/api/geocode/json?address=UTSA&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';
 
     if(window.location.hash){
       access_token =  window.location.hash.substr(1);
@@ -42,9 +42,6 @@
 
           console.log(access_token);
 
-
-          //pixelunion
-          access_token ='207676824.1677ed0.958e8f0f22bf4121b46e45392657a5b5'
 
           var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+access_token;
 
