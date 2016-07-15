@@ -62,10 +62,10 @@
 
             console.log(lat.toString()+", "+lng.toString());
 
-            console.log(access_token);
+            console.log(this.access_token);
 
 
-            var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+access_token;
+            var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+this.access_token;
 
             console.log(instaAddress)
 
