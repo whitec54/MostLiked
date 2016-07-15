@@ -18,6 +18,7 @@
     <h1>instaRedirect: {{ instaRedirect }} </h1>
     <h1>address: {{ address }} </h1>
     <h1 v-show="haveAccess">access_token: {{ access_token }} </h1>
+    <h1> {{ testAddress }} </h1>
 
     <button v-show="!haveAccess" @click="redirect">verify with insta</button>
     <button v-show="haveAccess" @click="setAccessfunction"> grab key</button>
