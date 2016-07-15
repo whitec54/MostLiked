@@ -38,6 +38,9 @@
         instaRedirect: 'https://whitec54.github.io/MostLiked',
         address: '6802+UTSA+Boulevard',
         access_token: '',
+        lattitude: '',
+        longitude: '',
+        instaObject: {},
       },
 
       computed: {
@@ -45,7 +48,9 @@
 
         testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+this.address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
 
-        haveAccess: function(){ return window.location.hash}
+        haveAccess: function(){ return window.location.hash},
+
+        instaAddress: function(){return 'https://api.instagram.com/v1/media/search?lat='+this.lattitude+'&lng='+this.longitude+'&'+this.access_token;},
       },
 
       methods: {
@@ -62,13 +67,11 @@
 
             console.log(lat.toString()+", "+lng.toString());
 
-            console.log(this.access_token);
-
-
-            var instaAddress = 'https://api.instagram.com/v1/media/search?lat='+lat.toString()+'&lng='+lng.toString()+'&'+this.access_token;
-
-            console.log(instaAddress)
-
+            this.lattitude = lat.toString();
+            this.longitude = lng.toString();
+            }
+          },
+          getInstaObject: function(){
             $.ajax({
               type: "GET",
               dataType: "jsonp",
@@ -77,8 +80,7 @@
                   console.log(imageData)
               }
             });
-          });
-        },
+          },
       }
 
     });
