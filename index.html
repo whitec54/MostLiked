@@ -28,6 +28,8 @@
     <button v-show="access_token != ''" @click="googleLocal">get that google data</button>
     <button v-show="lattitude != ''" @click=getInstaObject>get the insta data</button>
 
+    <pre> {{ $data | json }} </pre>
+
   </div>
 
     <script>
@@ -83,9 +85,10 @@ var vueRock = new Vue({
             $.ajax({
               type: "GET",
               dataType: "jsonp",
-              url: instaAddress,
+              url: this.instaAddress,
               success: function(imageData) {
-                  console.log(imageData)
+                  console.log(imageData);
+                  vueRock.$set('instaObject',imageData);
               }
             });
           },
