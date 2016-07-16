@@ -21,13 +21,13 @@
       <button @click="redirect"> get started </button>
     </div>
 
-    <div class="center" id="user_entry" v-show="haveAccess&&instaObject=={}">
+    <div class="center" id="user_entry" v-show="showEntry">
       <button  @click="setAccessfunction"> grab key</button>
       <button  @click="googleLocal">get that google data</button>
       <button  @click=getInstaObject>get the insta data</button>
     </div>
 
-    <div class="center" id="display" v-show="instaObject!={}">
+    <div class="center" id="display" v-show="haveImage">
       <h1> this is where the picture will go </h1>
     </div>
 
@@ -49,6 +49,7 @@ var vueRock = new Vue({
         lattitude: '',
         longitude: '',
         instaObject: {},
+        haveImage: false,
       },
 
       computed: {
@@ -59,6 +60,8 @@ var vueRock = new Vue({
         haveAccess: function(){ return window.location.hash},
 
         instaAddress: function(){return 'https://api.instagram.com/v1/media/search?lat='+this.lattitude+'&lng='+this.longitude+'&'+this.access_token;},
+
+        showEntry: function(){return (!this.haveImage)&&(this.haveAccess)}
       },
 
       methods: {
@@ -92,6 +95,7 @@ var vueRock = new Vue({
               success: function(imageData) {
                   console.log(imageData);
                   vueRock.$set('instaObject',imageData);
+                  vueRock.$set('haveImage',true)
               }
             });
           },
