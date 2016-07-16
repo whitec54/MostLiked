@@ -31,6 +31,7 @@
 
     <div class="center" id="display" v-show="haveImage">
       <h1> this is where the picture will go </h1>
+      <p> {{ firstUrl }} </p>
     </div>
 
     <pre> {{ $data | json }} </pre>
@@ -64,7 +65,16 @@ var vueRock = new Vue({
 
         instaAddress: function(){return 'https://api.instagram.com/v1/media/search?lat='+this.lattitude+'&lng='+this.longitude+'&'+this.access_token+'&distance='+this.distance;},
 
-        showEntry: function(){return (!this.haveImage)&&(this.haveAccess)}
+        showEntry: function(){return (!this.haveImage)&&(this.haveAccess)},
+
+        firstUrl: function(){
+          if(this.haveImage){
+            return instaObject["data"][0]["images"]["standard_resolution"]["url"];
+          }
+          else{
+            return '';
+          }
+        }
       },
 
       methods: {
