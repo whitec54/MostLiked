@@ -6,6 +6,7 @@
     <title>Hello World - Google  Web Search API Sample</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/vue/1.0.26/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="base.css">
 
   </head>
 
@@ -13,21 +14,20 @@
   <body>
 
   <div id="app">
-    <input v-model="address"/>
 
-    <div class="center "id="landing" v-show="!haveAccess">
+    <div class="center"id="landing" v-show="!haveAccess">
       <h1> MostLiked </h1>
       <p> sign into instagram to enter </p>
       <button @click="redirect"> get started </button>
     </div>
 
-    <div class="center" id="user_entry" v-show="haveAccess&&instaData=={}">
+    <div class="center" id="user_entry" v-show="haveAccess&&instaObject=={}">
       <button  @click="setAccessfunction"> grab key</button>
       <button  @click="googleLocal">get that google data</button>
       <button  @click=getInstaObject>get the insta data</button>
     </div>
 
-    <div class="center" id="display" v-show="instaData!={}">
+    <div class="center" id="display" v-show="instaObject!={}">
       <h1> this is where the picture will go </h1>
     </div>
 
