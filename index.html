@@ -14,20 +14,22 @@
 
   <div id="app">
     <input v-model="address"/>
-    <h1>instaClientId: {{ instaClientID }} </h1>
-    <h1>instaClientSecret {{ instaClientSecret }} </h1>
-    <h1>instaRedirect: {{ instaRedirect }} </h1>
-    <h1>address: {{ address }} </h1>
-    <h1> {{ testAddress }} </h1>
-    <h1>lat: {{ lattitude }} </h1>
-    <h1>lon: {{ longitude }} </h1>
-    <h1 v-show="haveAccess">access_token: {{ access_token }} </h1>
 
+    <div class="center "id="landing" v-show="!haveAccess">
+      <h1> MostLiked </h1>
+      <p> sign into instagram to enter </p>
+      <button @click="redirect"> get started </button>
+    </div>
 
-    <button v-show="!haveAccess" @click="redirect">verify with insta</button>
-    <button v-show="haveAccess" @click="setAccessfunction"> grab key</button>
-    <button v-show="access_token != ''" @click="googleLocal">get that google data</button>
-    <button v-show="lattitude != ''" @click=getInstaObject>get the insta data</button>
+    <div class="center" id="user_entry" v-show="haveAccess&&instaData=={}">
+      <button  @click="setAccessfunction"> grab key</button>
+      <button  @click="googleLocal">get that google data</button>
+      <button  @click=getInstaObject>get the insta data</button>
+    </div>
+
+    <div class="center" id="display" v-show="instaData!={}">
+      <h1> this is where the picture will go </h1>
+    </div>
 
     <pre> {{ $data | json }} </pre>
 
