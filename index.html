@@ -73,8 +73,10 @@
 
             console.log(lat+", "+lng);
 
-            this.lattitude = lat;
-            this.longitude = lng;
+            this.$set('lattitude', lat);
+            this.$set('longitude', lng);
+            //this.lattitude = lat;
+            //this.longitude = lng;
           });
           },
           getInstaObject: function(){
