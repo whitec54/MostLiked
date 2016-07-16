@@ -30,7 +30,7 @@
     </div>
 
     <h1 v-show="haveImage"> {{ firstUser }} has the top photo with {{ firstLikes }} likes</h1>
-    <img class="imageCenter" v-show="haveImage" src="{{ firstUrl }}"/>
+    <img class="Center" v-show="haveImage" src="{{ firstUrl }}"/>
     <button v-show="haveImage" @click="reset"> reset </button>
 
     <pre> {{ $data | json }} </pre>
