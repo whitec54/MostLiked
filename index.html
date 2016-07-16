@@ -69,7 +69,7 @@ var vueRock = new Vue({
 
         firstUrl: function(){
           if(this.haveImage){
-            return instaObject["data"][0]["images"]["standard_resolution"]["url"];
+            return this.instaObject["data"][0]["images"]["standard_resolution"]["url"];
           }
           else{
             return '';
