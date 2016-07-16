@@ -29,11 +29,9 @@
       <button  @click=getInstaObject>get the insta data</button>
     </div>
 
-    <div class="center" id="display" v-show="haveImage">
-      <h1> {{ firstUser }} has the top photo with {{ firstLikes }} likes</h1>
-      <img src="{{ firstUrl }}"/>
-      <button @click="reset"> reset </button>
-    </div>
+    <h1 v-show="haveImage"> {{ firstUser }} has the top photo with {{ firstLikes }} likes</h1>
+    <img class="center" v-show="haveImage" src="{{ firstUrl }}"/>
+    <button v-show="haveImage" @click="reset"> reset </button>
 
     <pre> {{ $data | json }} </pre>
 
