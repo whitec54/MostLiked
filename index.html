@@ -30,10 +30,9 @@
     </div>
 
     <div class="center" id="display" v-show="haveImage">
-      <h1> this is where the picture will go </h1>
-      <p> {{ firstUrl }} </p>
-      <button @click="reset"> reset </button>
+      <h1> {{ firstUser }} has the top photo with {{ firstLikes }} likes</h1>
       <img src="{{ firstUrl }}"/>
+      <button @click="reset"> reset </button>
     </div>
 
     <pre> {{ $data | json }} </pre>
@@ -76,6 +75,14 @@ var vueRock = new Vue({
           else{
             return '';
           }
+        },
+
+        firstLikes: function() {
+          return this.instaObject["data"][0]["likes"]["count"];
+        },
+
+        firstUser: function() {
+          return this.instaObject["data"][0]["user"]["username"]
         }
       },
 
