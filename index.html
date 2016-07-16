@@ -62,7 +62,7 @@ var vueRock = new Vue({
 
         haveAccess: function(){ return window.location.hash},
 
-        instaAddress: function(){return 'https://api.instagram.com/v1/media/search?lat='+this.lattitude+'&lng='+this.longitude+'&'+this.access_token+'&distance='this.distance;},
+        instaAddress: function(){return 'https://api.instagram.com/v1/media/search?lat='+this.lattitude+'&lng='+this.longitude+'&'+this.access_token+'&distance='+this.distance;},
 
         showEntry: function(){return (!this.haveImage)&&(this.haveAccess)}
       },
