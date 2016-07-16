@@ -32,6 +32,7 @@
     <div class="center" id="display" v-show="haveImage">
       <h1> this is where the picture will go </h1>
       <p> {{ firstUrl }} </p>
+      <button @click="reset"> reset </button>
     </div>
 
     <pre> {{ $data | json }} </pre>
@@ -96,8 +97,7 @@ var vueRock = new Vue({
 
             vueRock.$set('lattitude', lat);
             vueRock.$set('longitude', lng);
-            //this.lattitude = lat;
-            //this.longitude = lng;
+
           });
           },
           getInstaObject: function(){
@@ -112,6 +112,11 @@ var vueRock = new Vue({
               }
             });
           },
+
+          reset: function(){
+            this.haveImage = false;
+            this.instaObject = {};
+          }
       }
 
     });
