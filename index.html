@@ -24,7 +24,7 @@
     <div class="center" id="user_entry" v-show="showEntry">
       <input v-model="address"/>
       <input v-model="distance"/>
-      <button  @click="setAccessfunction" v-show="access_token!=''"> grab key</button>
+      <button  @click="setAccessfunction" v-show="access_token==''"> grab key</button>
       <button  @click="googleLocal" v-show="lattitude==''">get that google data</button>
       <button  @click="getInstaObject" v-show="lattitude!=''">get the insta data</button>
     </div>
