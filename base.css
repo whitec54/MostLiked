@@ -21,6 +21,9 @@ body {
   vertical-align: middle;
   text-align: center;
 }
+.inner{
+  display: inline-block;
+}
 
 .imageCenter {
   width: 100%;
