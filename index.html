@@ -15,10 +15,11 @@
 
   <div id="app">
 
-  <h1> {{ queryAddress }} </h1>
+
   
     <div class="title" v-show="!haveAccess">
       <h1 > MostLiked </h1>
+      <h1> {{ queryAddress }} </h1>
     </div>
     <div class="center"id="landing" v-show="!haveAccess">
       <p> sign into instagram to enter </p>
@@ -75,7 +76,8 @@ var vueRock = new Vue({
           res = "";
           var addressParts = address.split();
           for(var i = 0;i<addressParts.length;i++){
-            i == 0? (res += addressParts[i]):(res+=("+"+addressParts[i]));
+            res += "+";
+            res += addressParts[i];
           }
           return res;
         },
