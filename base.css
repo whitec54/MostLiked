@@ -1,3 +1,8 @@
+html,body {
+   height: 100%;
+   width: 100%;
+}
+
 body {
     background-color: #FDFDFD;
 }
@@ -36,7 +41,6 @@ button {
 }
 h1{
   text-align: center;
-  height: 25%;
 }
 .title{
   height: 25%;
