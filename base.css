@@ -1,5 +1,5 @@
 body {
-    background-color: #E2E6E6;
+    background-color: #FDFDFD;
 }
 .center {
   width: 50%;
@@ -8,8 +8,10 @@ body {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  border-radius: 3em;
-  background-color: #FDFDFD;
+  border-radius: .5em;
+  background-color: #E2E6E6;
+  -webkit-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  -moz-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
 }
 
 .imageCenter {
@@ -20,4 +22,8 @@ body {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
   border:1px solid #000;
+}
+
+input {
+  padding: 1em
 }
