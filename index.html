@@ -14,7 +14,7 @@
   <body>
 
   <div id="app">
-  <h1> {{ queryAddress }} </h1>
+  
     <div class="title" v-show="!haveAccess">
       <h1 > MostLiked </h1>
     </div>
@@ -44,6 +44,7 @@
     <img class="imageCenter" v-show="haveImage" src="{{ firstUrl }}"/>
     <button v-show="haveImage" @click="reset"> reset </button>
 
+<pre> {{ $data | json }} </pre>
 
   </div>
 
