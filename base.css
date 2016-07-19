@@ -17,12 +17,7 @@ body {
   background-color: #E2E6E6;
   -webkit-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
   -moz-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
-}
-.inner{
-  display: inline-block;
 }
 
 .imageCenter {
