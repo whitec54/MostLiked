@@ -72,7 +72,7 @@ var vueRock = new Vue({
           res = "";
           var addressParts = address.split();
           for(var i = 0;i<addressParts.length;i++){
-            i == 0? (res += addressParts[i]):(res+="+";res+=addressParts[i]);
+            i == 0? (res += addressParts[i]):(res+=("+"+addressParts[i]));
           }
           return res;
         }
