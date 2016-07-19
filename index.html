@@ -75,7 +75,7 @@ var vueRock = new Vue({
             i == 0? (res += addressParts[i]):(res+=("+"+addressParts[i]));
           }
           return res;
-        }
+        },
 
         testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+this.address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
 
