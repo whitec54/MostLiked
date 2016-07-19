@@ -37,8 +37,6 @@ body {
 }
 
 input {
-    float: bottom;
-    margin:auto;
 
 }
 
@@ -50,16 +48,14 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1em;
-    float: bottom;
-    margin:auto;
+    font-size: .5em;
 }
 h1{
   text-align: center;
   margin: none;
 }
 .title{
-  height: 15%;
+  height: 25%;
 }
 #app{
   margin-left: 40em;
