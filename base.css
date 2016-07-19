@@ -39,3 +39,10 @@ button {
     display: inline-block;
     font-size: .5em;
 }
+h1{
+  text-align: center;
+}
+#app{
+  margin-left: 5em;
+  margin-right: 5em;
+}
