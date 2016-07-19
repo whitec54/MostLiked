@@ -14,6 +14,7 @@
   <body>
 
   <div id="app">
+  <h1> {{ queryAddress }} </h1>
     <div class="title" v-show="!haveAccess">
       <h1 > MostLiked </h1>
     </div>
@@ -66,6 +67,15 @@ var vueRock = new Vue({
 
       computed: {
         instaAuthUrl: function() { return 'https://api.instagram.com/oauth/authorize/?client_id='+this.instaClientID +'&redirect_uri='+ this.instaRedirect +'&response_type=token&scope=public_content'},
+
+        queryAddress: function() {
+          res =""
+          var addressParts = address.split();
+          for(var i = 0;i<addressParts.length;i++){
+            i = 0? (res += addressParts[i]):(res+="+";res+=addressParts[i]);
+          }
+          return res;
+        }
 
         testAddress: function() { return 'https://maps.googleapis.com/maps/api/geocode/json?address='+this.address+'&sensor=false&feilds=location&key=AIzaSyAZqyVRzbtWVUptpJP1nskrdwtZh4iw8eA';},
 
