@@ -76,7 +76,7 @@ var vueRock = new Vue({
 
         queryAddress: function() {
           res = "";
-          var addressParts = address.split();
+          var addressParts = this.address.split();
           for(var i = 0;i<addressParts.length;i++){
             res += "+";
             res += addressParts[i];
