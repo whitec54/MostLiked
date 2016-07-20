@@ -19,14 +19,16 @@
   
     <div class="title" v-show="!haveAccess">
       <h1 > MostLiked </h1>
-      <h1> {{ queryAddress }} </h1>
+      
     </div>
     <div class="center"id="landing" v-show="!haveAccess">
       <p> sign into instagram to enter </p>
       <button @click="redirect"> get started </button>
     </div>
 
-    <div class="title" v-show="showEntry" ></div>
+    <div class="title" v-show="showEntry" >
+      <h1> {{ queryAddress }} </h1>
+    </div>
 
     <div class="center" id="user_entry" v-show="showEntry">
       <div>
