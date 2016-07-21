@@ -116,7 +116,7 @@ var vueRock = new Vue({
 
         setAccessfunction: function(){ 
           this.access_token =  window.location.hash.substr(1);
-          this.$emit('googleLocal')},
+          vueRock.$emit('googleLocal')},
 
         googleLocal: function(){
           $.get(this.testAddress, function(geocodeData){
@@ -133,7 +133,7 @@ var vueRock = new Vue({
             vueRock.$set('lattitude', lat);
             vueRock.$set('longitude', lng);
 
-            this.$emit('getInstaObject')
+            vueRock.$emit('getInstaObject')
 
           });
           },
