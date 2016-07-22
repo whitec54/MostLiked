@@ -133,7 +133,7 @@ var vueRock = new Vue({
             vueRock.$set('lattitude', lat);
             vueRock.$set('longitude', lng);
 
-            vueRock.$emit('getInstaObject')
+            vueRock.$emit('ready.getInstaObject')
 
           });
           },
@@ -160,6 +160,9 @@ var vueRock = new Vue({
       events: {
         "ready.googleLocal": function(){
           this.googleLocal();
+        },
+        'ready.getInstaObject': function(){
+          this.getInstaObject();
         }
       }
 
