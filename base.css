@@ -31,9 +31,11 @@ body {
 }
 
 input {
-    float: bottom;
-    margin:auto;
+    margin-top: 5em;
 
+}
+p{
+	margin-top: 5em;
 }
 
 button {
@@ -45,8 +47,7 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
-    float: bottom;
-    margin:auto;
+    margin-top: 1em;
 }
 h1{
   text-align: center;
