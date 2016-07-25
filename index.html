@@ -101,6 +101,7 @@ var vueRock = new Vue({
         },
 
         firstLikes: function() {
+          console.log(this.instaObject)
           return this.instaObject["data"][0]["likes"]["count"];
         },
 

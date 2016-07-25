@@ -35,7 +35,9 @@ input {
 
 }
 p{
-	margin-top: 10em;
+	margin-top: 13em;
+	margin-left: 5em;
+	margin-right: 5em;
 }
 
 button {
@@ -63,9 +65,4 @@ h1{
 }
 #reset{
 	float:right;
-}
-.title span{
-	position: absolute;
-	bottom: 0;
-	right: 0;
 }
