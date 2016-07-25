@@ -36,6 +36,7 @@ input {
 }
 p{
 	margin-top: 20em;
+	padding: none;
 }
 
 button {
