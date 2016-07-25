@@ -32,6 +32,8 @@
 
     <div class="center" id="user_entry" v-show="showEntry">
       <div>
+        <span>Location</span>
+        <span>Radius (m)</span>
         <input v-model="address"/>
         <input v-model="distance"/>
       </div>
@@ -43,6 +45,7 @@
 
     <div class="title">
       <h1 v-show="haveImage"> {{ firstUser }} has the top photo with {{ firstLikes }} likes</h1>
+      <h1 v-show="haveImage&&firsturl=='undefined'"> shit's broke yo</h1>
     </div>
     <img class="imageCenter" v-show="haveImage" src="{{ firstUrl }}"/>
     <button id="reset" v-show="haveImage" @click="reset"> reset </button>
